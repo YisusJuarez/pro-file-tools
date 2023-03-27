@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { NavBar } from './components/NavBar';
 import { SideNav } from './components/SideNav';
@@ -7,7 +7,7 @@ import { Lyrics } from './pages/Lyrics';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="App">
         <div className='flex flex-col h-screen'>
           <NavBar></NavBar>
@@ -27,7 +27,7 @@ function App() {
 
 
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
