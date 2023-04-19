@@ -4,7 +4,7 @@ const isDev = require('electron-is-dev');
 const { handleCreateSong } = require("./utils/handleCreateSong")
 
 
-function createWindow() {
+async function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
     width: 800,
@@ -18,8 +18,8 @@ function createWindow() {
 
   // and load the index.html of the app.
   // win.loadFile("index.html");
-  win.removeMenu();
-  win.loadURL(
+  await win.removeMenu();
+  await win.loadURL(
     isDev
       ? 'http://localhost:3000'
       : `file://${path.join(__dirname, '../build/index.html')}`

@@ -1,7 +1,10 @@
 {
   "name": "pro-file-tools",
-  "version": "v0.1.0",
-  "private": true,
+  "version": "v0.1.1",
+  "description": "Pro file toos for proPresenter",
+  "author": "YisusJuarez",
+  "repository": "https://github.com/YisusJuarez/pro-file-tools",
+  "private": false,
   "main": "public/main.js",
   "productName": "ProFileTools",
   "homepage": "./",
@@ -25,7 +28,32 @@
     "eject": "react-scripts eject",
     "dev": "concurrently -k \"cross-env BROWSER=none npm start\" \"npm:electron\"",
     "electron": "wait-on tcp:3000 && electron .",
-    "package": "electron-builder build --win -c.extraMetadata.main=build/main.js --publish never"
+    "package": "electron-builder build --win -c.extraMetadata.main=build/main.js -p always"
+  },
+  "build": {
+    "appId": "com.protools",
+    "productName": "ProTools",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "YisusJuarez",
+        "repo": "pro-file-tools"
+      }
+    ],
+    "win": {
+      "publish": [
+        "github"
+      ],
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    }
   },
   "eslintConfig": {
     "extends": [
