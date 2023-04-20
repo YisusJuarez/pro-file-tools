@@ -6,7 +6,7 @@ export const SideNav = ({ menuItems }) => {
         <div className="flex flex-col px-1 py-2">
 
             {menuItems.map((item) => (
-                <NavLink to={item.path} className="group flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-neutral-800">
+                <NavLink to={item.path} className="group flex items-center p-2 text-base font-normal rounded text-white hover:bg-neutral-800">
                     {
                         ({ isActive }) =>
                             isActive ? <>

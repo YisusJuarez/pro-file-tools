@@ -36,7 +36,10 @@ async function createWindow() {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
-  ipcMain.on('createSong', handleCreateSong);
+  ipcMain.handle('createSong', async(e, data)=>{
+    const createSong = await handleCreateSong( data)
+    return createSong
+  });
   createWindow()
 });
 

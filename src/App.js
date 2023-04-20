@@ -17,7 +17,7 @@ function App() {
             </div>
             <div class="flex-1 w-auto bg-neutral-900 border-neutral-800 border p-4">
               <Routes>
-                <Route path="/" element={<></>} />
+                <Route path="/" element={<Lyrics />} />
                 <Route path="/lyricstopro" element={<Lyrics />} />
               </Routes>
             </div>

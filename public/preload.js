@@ -1,6 +1,9 @@
 const { contextBridge, ipcRenderer } = require("electron")
 
 contextBridge.exposeInMainWorld("proApi", {
-    generateSongs: (data) =>ipcRenderer.send('createSong', data),
+    generateSongs: async(data) =>{
+        const response = await ipcRenderer.invoke('createSong', data)
+        return response
+    },
 })
 
